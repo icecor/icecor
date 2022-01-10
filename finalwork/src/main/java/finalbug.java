@@ -2,7 +2,6 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
 import java.util.ArrayList;
 
 public class finalbug {
@@ -15,12 +14,12 @@ public class finalbug {
 
             for (int a = 1; a <= 5; a++) {
                 String top = doc.select("body > div.l-wrap.l-wrap--champion > div.l-container > div.l-champion-index > div.l-champion-index-content > div.l-champion-index-content--side > div > div.champion-index-trend-content > div > div.tabItem.champion-trend.champion-trend-tier > div > table > tbody.tabItem.champion-trend-tier-TOP > tr:nth-child(" + a + ") > td.champion-index-table__cell.champion-index-table__cell--champion > a > div.champion-index-table__name").text();
-                System.out.println("排名" + a + ":" + top);
+                System.out.println("排名" + a + ":" + top);//抓角色排行
                 Elements choose = doc.select("body > div.l-wrap.l-wrap--champion > div.l-container > div.l-champion-index > div.l-champion-index-content > div.l-champion-index-content--side > div > div.champion-index-trend-content > div > div.tabItem.champion-trend.champion-trend-tier > div > table > tbody.tabItem.champion-trend-tier-TOP > tr:nth-child(" + a + ") > td.champion-index-table__cell.champion-index-table__cell--champion > a");
                 Element choose2 = choose.get(0);
-                Document doc2 = Jsoup.connect(choose2.absUrl("href")).get();
+                Document doc2 = Jsoup.connect(choose2.absUrl("href")).get();//到角色裡的內頁
                 System.out.println(top+"最常使用的兩套符文:");
-                Elements images1 = doc2.select("tbody.tabItem.ChampionKeystoneRune-1 div.perk-page  div.perk-page__item.perk-page__item--active  div.perk-page__image >img");
+                Elements images1 = doc2.select("tbody.tabItem.ChampionKeystoneRune-1 div.perk-page  div.perk-page__item.perk-page__item--active  div.perk-page__image >img");//爬取符文上的文字
                 for(int i = 0; i <= 11; i++){
                     Element image = images1.get(i);
                     System.out.println(image.attr("alt"));
@@ -31,9 +30,9 @@ public class finalbug {
                 }
                 System.out.println("=========");
                 System.out.println("克制你的前三名英雄:");
-                ArrayList<String> counter = new ArrayList<String>();
+                ArrayList<String> counter = new ArrayList<String>();//用陣列存取英雄資料
                 for (int s = 0; s < 3; s++){
-                    String name2 = doc2.getElementsByClass("champion-stats-header-matchup__table__champion").get(s).text();//counter
+                    String name2 = doc2.getElementsByClass("champion-stats-header-matchup__table__champion").get(s).text();//前三個counter角
                     System.out.println(name2);
                     counter.add(name2);
                 }
@@ -41,7 +40,7 @@ public class finalbug {
 
             }
             System.out.println("打野T1角");
-            for (int b = 1; b <= 5; b++) {
+            for (int b = 1; b <= 3; b++) {
                 String jg = doc.select("body > div.l-wrap.l-wrap--champion > div.l-container > div.l-champion-index > div.l-champion-index-content > div.l-champion-index-content--side > div > div.champion-index-trend-content > div > div.tabItem.champion-trend.champion-trend-tier > div > table > tbody.tabItem.champion-trend-tier-JUNGLE > tr:nth-child(" + b + ") > td.champion-index-table__cell.champion-index-table__cell--champion > a > div.champion-index-table__name").text();
                 System.out.println("排名" + b + ":" + jg);
                 Elements choose = doc.select("body > div.l-wrap.l-wrap--champion > div.l-container > div.l-champion-index > div.l-champion-index-content > div.l-champion-index-content--side > div > div.champion-index-trend-content > div > div.tabItem.champion-trend.champion-trend-tier > div > table > tbody.tabItem.champion-trend-tier-TOP > tr:nth-child(" + b + ") > td.champion-index-table__cell.champion-index-table__cell--champion > a");
@@ -151,7 +150,7 @@ public class finalbug {
                 }
                 System.out.println("=================");
             }
-//1
+
 
         } catch (Exception e) {
             System.out.println(e);
