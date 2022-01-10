@@ -3,6 +3,8 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.util.ArrayList;
+
 public class finalbug {
     public static void main(String[] args) {
         try {
@@ -27,6 +29,16 @@ public class finalbug {
                         break;
                     }
                 }
+                System.out.println("=========");
+                System.out.println("克制你的前三名英雄:");
+                ArrayList<String> counter = new ArrayList<String>();
+                for (int s = 0; s < 3; s++){
+                    String name2 = doc2.getElementsByClass("champion-stats-header-matchup__table__champion").get(s).text();//counter
+                    System.out.println(name2);
+                    counter.add(name2);
+                }
+                System.out.println("=================");
+
             }
             System.out.println("打野T1角");
             for (int b = 1; b <= 5; b++) {
@@ -45,7 +57,17 @@ public class finalbug {
                         break;
                     }
                 }
+                System.out.println("=========");
+                System.out.println("克制你的前三名英雄:");
+                ArrayList<String> counter = new ArrayList<String>();
+                for (int s = 0; s < 3; s++){
+                    String name2 = doc2.getElementsByClass("champion-stats-header-matchup__table__champion").get(s).text();//counter
+                    System.out.println(name2);
+                    counter.add(name2);
+                }
+                System.out.println("=================");
             }
+
             System.out.println("中路T1角");
             for (int c = 1; c <= 5; c++) {
                 String mid = doc.select("body > div.l-wrap.l-wrap--champion > div.l-container > div.l-champion-index > div.l-champion-index-content > div.l-champion-index-content--side > div > div.champion-index-trend-content > div > div.tabItem.champion-trend.champion-trend-tier > div > table > tbody.tabItem.champion-trend-tier-MID > tr:nth-child(" + c + ") > td.champion-index-table__cell.champion-index-table__cell--champion > a > div.champion-index-table__name").text();
@@ -63,7 +85,17 @@ public class finalbug {
                         break;
                     }
                 }
+                System.out.println("=========");
+                System.out.println("克制你的前三名英雄:");
+                ArrayList<String> counter = new ArrayList<String>();
+                for (int s = 0; s < 3; s++){
+                    String name2 = doc2.getElementsByClass("champion-stats-header-matchup__table__champion").get(s).text();//counter
+                    System.out.println(name2);
+                    counter.add(name2);
+                }
+                System.out.println("=================");
             }
+
             System.out.println("下路T1角");
             for (int d = 1; d <= 2; d++) {
                 String ad = doc.select("body > div.l-wrap.l-wrap--champion > div.l-container > div.l-champion-index > div.l-champion-index-content > div.l-champion-index-content--side > div > div.champion-index-trend-content > div > div.tabItem.champion-trend.champion-trend-tier > div > table > tbody.tabItem.champion-trend-tier-ADC > tr:nth-child(" + d + ") > td.champion-index-table__cell.champion-index-table__cell--champion > a > div.champion-index-table__name").text();
@@ -81,7 +113,17 @@ public class finalbug {
                         break;
                     }
                 }
+                System.out.println("=========");
+                System.out.println("克制你的前三名英雄:");
+                ArrayList<String> counter = new ArrayList<String>();
+                for (int s = 0; s < 3; s++){
+                    String name2 = doc2.getElementsByClass("champion-stats-header-matchup__table__champion").get(s).text();//counter
+                    System.out.println(name2);
+                    counter.add(name2);
+                }
+                System.out.println("=================");
             }
+
             System.out.println("輔助T1角");
             for (int e = 1; e <= 4; e++) {
                 String sup = doc.select("body > div.l-wrap.l-wrap--champion > div.l-container > div.l-champion-index > div.l-champion-index-content > div.l-champion-index-content--side > div > div.champion-index-trend-content > div > div.tabItem.champion-trend.champion-trend-tier > div > table > tbody.tabItem.champion-trend-tier-SUPPORT > tr:nth-child(" + e + ") > td.champion-index-table__cell.champion-index-table__cell--champion > a > div.champion-index-table__name").text();
@@ -99,7 +141,17 @@ public class finalbug {
                         break;
                     }
                 }
+                System.out.println("=========");
+                System.out.println("克制你的前三名英雄:");
+                ArrayList<String> counter = new ArrayList<String>();
+                for (int s = 0; s < 3; s++){
+                    String name2 = doc2.getElementsByClass("champion-stats-header-matchup__table__champion").get(s).text();//counter
+                    System.out.println(name2);
+                    counter.add(name2);
+                }
+                System.out.println("=================");
             }
+
 
         } catch (Exception e) {
             System.out.println(e);
