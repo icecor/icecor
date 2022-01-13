@@ -9,7 +9,7 @@ public class finalbug {
         try {
             Document doc = Jsoup.connect("https://tw.op.gg/champion/statistics").get();
             System.out.println(doc.title());
-            ArrayList<String> road = new ArrayList<String>();
+            ArrayList<String> road = new ArrayList<String>();//用陣列儲存路線
             road.add("TOP");
             road.add("JUNGLE");
             road.add("MID");
