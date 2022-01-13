@@ -29,19 +29,15 @@ public class finalbug {
                     Elements images1 = doc2.select("tbody.tabItem.ChampionKeystoneRune-1 div.perk-page  div.perk-page__item.perk-page__item--active  div.perk-page__image >img");//爬取符文上的文字
                     int h = 1;
                     System.out.println("符文" + h);
-                    for (int i = 0; i <= 5; i++) {
+                    for (int i = 0; i <= 11; i++) {
                         Element image = images1.get(i);
                         System.out.println(image.attr("alt"));
                             if (i == 5) {
                                 System.out.println("=========");
+                                h++;
+                                System.out.println("符文" + h);
                             }
-                        }
-                    h++;
-                    System.out.println("符文" + h);
-                    for (int r = 5; r <= 11; r++) {
-                        Element image1 = images1.get(r);
-                        System.out.println(image1.attr("alt"));
-                        if (r == 11) {
+                        if (i == 11) {
                             System.out.println("==============");
                         }
                     }
